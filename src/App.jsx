@@ -358,172 +358,244 @@ function Specs() {
   );
 }
 
-// ── Value Stack ──
+// ── Value Stack (3-Tier Brunson Pricing) ──
 function ValueStack() {
+  const tiers = [
+    {
+      name: "ESSENTIALS",
+      price: "500",
+      badge: null,
+      featured: false,
+      items: [
+        "1 weekly sermon (Sunday)",
+        "Up to 3 clips per sermon",
+        "Facebook Reels posting",
+        "Weekly briefing email",
+        "Voice-matched captions",
+      ],
+    },
+    {
+      name: "GROWTH",
+      price: "1,000",
+      badge: "BEST VALUE",
+      featured: true,
+      items: [
+        "2 sermons per week (Sun + Wed)",
+        "6 clips per sermon (60+/mo)",
+        "Facebook Reels live now; future-ready for IG, YT, TikTok",
+        "Voice-matched AI captions",
+        "Animated captions burned in",
+        "Weekly briefing with video previews",
+      ],
+    },
+    {
+      name: "REGIONAL IMPACT",
+      price: "1,500",
+      badge: null,
+      featured: false,
+      items: [
+        "Everything in Growth",
+        "Multi-platform distribution as it launches (IG Reels, YT Shorts, TikTok)",
+        "AI-driven graphics and quote assets",
+        "Priority support and strategy touchpoints",
+        "Dedicated account optimization",
+      ],
+    },
+  ];
+
   const lineItems = [
     ["Full-Time Video Editor", "$4,500"],
     ["Social Media Manager", "$3,500"],
     ["Graphic Designer & Copywriter", "$2,000"],
   ];
+
   return (
-    <section style={{ padding: "140px 24px", background: "#fff" }}>
-      <div style={{ maxWidth: 640, margin: "0 auto", textAlign: "center" }}>
+    <section id="pricing" style={{ padding: "140px 24px", background: "#fff" }}>
+      <div style={{ maxWidth: 1100, margin: "0 auto", textAlign: "center" }}>
         <Reveal>
           <p style={{
             fontFamily: hd, fontSize: 11, fontWeight: 700,
             letterSpacing: "0.22em", color: "#bbb", marginBottom: 24,
-          }}>THE MATH</p>
+          }}>PRICING</p>
           <h2 style={{
             fontFamily: hd, fontSize: "clamp(24px, 4vw, 40px)",
             fontWeight: 800, color: "#0a0a0a", lineHeight: 1.12,
-            margin: "0 auto 64px",
+            margin: "0 auto 32px",
           }}>STOP HIRING A TEAM.<br /><span style={{ color: RED }}>START AN ENGINE.</span></h2>
         </Reveal>
 
-        {/* The Stack */}
-        <Reveal delay={0.1}>
+        {/* What churches typically pay */}
+        <Reveal delay={0.08}>
           <div style={{
-            border: "1px solid rgba(0,0,0,0.08)",
-            background: "linear-gradient(180deg, rgba(250,250,250,0.8), rgba(255,255,255,1))",
-            backdropFilter: "blur(8px)",
-            marginBottom: 2,
+            maxWidth: 520, margin: "0 auto 60px",
+            border: "1px solid rgba(0,0,0,0.07)",
+            background: "linear-gradient(180deg, rgba(250,250,250,0.8), #fff)",
           }}>
             <div style={{
-              padding: "32px 40px 16px",
+              padding: "20px 32px 12px",
               borderBottom: "1px solid rgba(0,0,0,0.04)",
             }}>
               <p style={{
-                fontFamily: hd, fontSize: 11, fontWeight: 700,
-                letterSpacing: "0.18em", color: "#bbb", marginBottom: 4,
+                fontFamily: hd, fontSize: 10, fontWeight: 700,
+                letterSpacing: "0.18em", color: "#bbb",
               }}>WHAT CHURCHES TYPICALLY PAY</p>
             </div>
-
             {lineItems.map(([label, price], i) => (
               <div key={i} style={{
                 display: "flex", justifyContent: "space-between", alignItems: "center",
-                padding: "20px 40px",
-                borderBottom: "1px solid rgba(0,0,0,0.04)",
+                padding: "14px 32px",
+                borderBottom: "1px solid rgba(0,0,0,0.03)",
               }}>
-                <span style={{
-                  fontFamily: bd, fontSize: 16, fontWeight: 400, color: "#666",
-                }}>{label}</span>
-                <span style={{
-                  fontFamily: hd, fontSize: 16, fontWeight: 700, color: "#0a0a0a",
-                }}>{price}/mo</span>
+                <span style={{ fontFamily: bd, fontSize: 14, color: "#777" }}>{label}</span>
+                <span style={{ fontFamily: hd, fontSize: 14, fontWeight: 700, color: "#0a0a0a" }}>{price}/mo</span>
               </div>
             ))}
-
             <div style={{
               display: "flex", justifyContent: "space-between", alignItems: "center",
-              padding: "24px 40px",
-              background: "rgba(0,0,0,0.02)",
+              padding: "16px 32px", background: "rgba(0,0,0,0.02)",
             }}>
-              <span style={{
-                fontFamily: hd, fontSize: 14, fontWeight: 700,
-                letterSpacing: "0.08em", color: "#0a0a0a",
-              }}>TOTAL REAL-WORLD VALUE</span>
-              <span style={{
-                fontFamily: hd, fontSize: 24, fontWeight: 900, color: "#0a0a0a",
-                letterSpacing: "-0.02em",
-              }}>$10,000/mo</span>
+              <span style={{ fontFamily: hd, fontSize: 12, fontWeight: 700, letterSpacing: "0.08em", color: "#0a0a0a" }}>TOTAL</span>
+              <span style={{ fontFamily: hd, fontSize: 20, fontWeight: 900, color: "#0a0a0a", textDecoration: "line-through", textDecorationColor: RED }}>$10,000/mo</span>
             </div>
           </div>
         </Reveal>
 
-        {/* The Engine Price */}
-        <Reveal delay={0.25}>
-          <div style={{
-            border: `2px solid ${RED}`,
-            background: "#fff",
-            padding: "48px 40px",
-            position: "relative",
-          }}>
-            <div style={{
-              position: "absolute", top: -14, left: "50%", transform: "translateX(-50%)",
-              padding: "5px 20px", background: RED,
-            }}>
-              <span style={{
-                fontFamily: hd, fontSize: 11, fontWeight: 700,
-                color: "#fff", letterSpacing: "0.14em",
-              }}>90% LESS</span>
-            </div>
+        {/* 3-Tier Cards */}
+        <div style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+          gap: 0,
+          alignItems: "stretch",
+          maxWidth: 1000,
+          margin: "0 auto",
+        }}>
+          {tiers.map((tier, i) => (
+            <Reveal key={i} delay={0.1 + i * 0.08}>
+              <div style={{
+                padding: tier.featured ? "52px 32px 44px" : "44px 32px 40px",
+                background: tier.featured
+                  ? "linear-gradient(180deg, rgba(204,0,0,0.03) 0%, #fff 40%)"
+                  : "#fff",
+                border: tier.featured
+                  ? `2px solid ${RED}`
+                  : "1px solid rgba(0,0,0,0.07)",
+                borderLeft: i === 0 ? "1px solid rgba(0,0,0,0.07)" : undefined,
+                position: "relative",
+                height: "100%",
+                display: "flex",
+                flexDirection: "column",
+              }}>
+                {/* Badge */}
+                {tier.badge && (
+                  <div style={{
+                    position: "absolute", top: -14, left: "50%", transform: "translateX(-50%)",
+                    padding: "5px 18px", background: RED,
+                  }}>
+                    <span style={{
+                      fontFamily: hd, fontSize: 10, fontWeight: 700,
+                      color: "#fff", letterSpacing: "0.14em",
+                    }}>{tier.badge}</span>
+                  </div>
+                )}
 
-            <p style={{
-              fontFamily: hd, fontSize: 11, fontWeight: 700,
-              letterSpacing: "0.18em", color: "#bbb", marginBottom: 20,
-            }}>PULPIT ENGINE</p>
+                {/* Plan name */}
+                <p style={{
+                  fontFamily: hd, fontSize: 11, fontWeight: 700,
+                  letterSpacing: "0.18em", color: "#bbb", marginBottom: 16,
+                }}>{tier.name}</p>
 
-            <div style={{
-              display: "flex", alignItems: "baseline", justifyContent: "center", gap: 6,
-            }}>
-              <span style={{
-                fontFamily: hd, fontSize: 72, fontWeight: 900,
-                color: "#0a0a0a", lineHeight: 1, letterSpacing: "-0.04em",
-              }}>$1,000</span>
-              <span style={{
-                fontFamily: bd, fontSize: 20, fontWeight: 400, color: "#bbb",
-              }}>/mo</span>
-            </div>
-
-            <p style={{
-              fontFamily: bd, fontSize: 15, fontWeight: 400,
-              color: "#999", marginTop: 12, marginBottom: 32,
-            }}>60+ clips/month. 2x daily. Fully automated.</p>
-
-            <div style={{
-              display: "flex", flexWrap: "wrap", justifyContent: "center", gap: 24,
-              marginBottom: 36,
-            }}>
-              {[
-                "AI-powered clip extraction",
-                "Animated captions burned in",
-                "Voice-matched to your pastor",
-                "Vertical format, every platform",
-                "Weekly briefing with previews",
-                "All costs included",
-              ].map((item, i) => (
-                <div key={i} style={{
-                  display: "flex", alignItems: "center", gap: 8,
+                {/* Price */}
+                <div style={{
+                  display: "flex", alignItems: "baseline", justifyContent: "center", gap: 4,
+                  marginBottom: 8,
                 }}>
-                  <div style={{ width: 5, height: 5, borderRadius: "50%", background: RED, flexShrink: 0 }} />
                   <span style={{
-                    fontFamily: bd, fontSize: 13, fontWeight: 500, color: "#666",
-                  }}>{item}</span>
+                    fontFamily: hd,
+                    fontSize: tier.featured ? 56 : 44,
+                    fontWeight: 900,
+                    color: "#0a0a0a", lineHeight: 1, letterSpacing: "-0.03em",
+                  }}>${tier.price}</span>
+                  <span style={{
+                    fontFamily: bd, fontSize: 16, fontWeight: 400, color: "#bbb",
+                  }}>/mo</span>
                 </div>
-              ))}
-            </div>
 
-            <a href={MAILTO} style={{
-              display: "block", padding: "18px 40px",
-              background: RED, color: "#fff",
-              fontFamily: hd, fontWeight: 700, fontSize: 15,
-              letterSpacing: "0.1em", textTransform: "uppercase",
-              textDecoration: "none", textAlign: "center",
-              transition: "background 0.25s",
-            }}
-            onMouseEnter={e => e.target.style.background = "#e60000"}
-            onMouseLeave={e => e.target.style.background = RED}
-            >Start Your Free 30-Day Trial</a>
-          </div>
-        </Reveal>
+                <p style={{
+                  fontFamily: bd, fontSize: 13, fontWeight: 400,
+                  color: "#bbb", marginBottom: 28,
+                }}>after 30-day free trial</p>
+
+                {/* Features */}
+                <div style={{ textAlign: "left", flex: 1 }}>
+                  {tier.items.map((item, j) => (
+                    <div key={j} style={{
+                      display: "flex", alignItems: "flex-start", gap: 10,
+                      marginBottom: 14,
+                    }}>
+                      <div style={{
+                        width: 5, height: 5, borderRadius: "50%",
+                        background: tier.featured ? RED : "#ccc",
+                        flexShrink: 0, marginTop: 7,
+                      }} />
+                      <span style={{
+                        fontFamily: bd, fontSize: 14, fontWeight: 400,
+                        color: "#666", lineHeight: 1.5,
+                      }}>{item}</span>
+                    </div>
+                  ))}
+                </div>
+
+                {/* CTA */}
+                <a href={MAILTO} style={{
+                  display: "block", padding: "16px 24px", marginTop: 24,
+                  background: tier.featured ? RED : "#0a0a0a",
+                  color: "#fff",
+                  fontFamily: hd, fontWeight: 700, fontSize: 13,
+                  letterSpacing: "0.1em", textTransform: "uppercase",
+                  textDecoration: "none", textAlign: "center",
+                  transition: "background 0.25s",
+                }}
+                onMouseEnter={e => e.target.style.background = tier.featured ? "#e60000" : "#333"}
+                onMouseLeave={e => e.target.style.background = tier.featured ? RED : "#0a0a0a"}
+                >{tier.featured ? "Start Free Trial" : "Get Started"}</a>
+              </div>
+            </Reveal>
+          ))}
+        </div>
 
         {/* Guarantee */}
-        <Reveal delay={0.35}>
+        <Reveal delay={0.4}>
           <div style={{
-            marginTop: 20, padding: "24px 32px",
+            marginTop: 32, padding: "24px 32px",
             border: "1px solid rgba(0,0,0,0.06)",
-            textAlign: "center",
+            textAlign: "center", maxWidth: 1000, margin: "32px auto 0",
           }}>
             <p style={{
               fontFamily: hd, fontSize: 12, fontWeight: 700,
               letterSpacing: "0.1em", color: "#0a0a0a", marginBottom: 6,
-            }}>90-DAY MONEY-BACK GUARANTEE</p>
+            }}>90-DAY MONEY-BACK GUARANTEE ON ALL PLANS</p>
             <p style={{
               fontFamily: bd, fontSize: 14, fontWeight: 400,
               color: "#999", lineHeight: 1.65,
             }}>
               30 days free + 60 days paid. Not satisfied after 90 days? Full refund. No questions.
             </p>
+          </div>
+        </Reveal>
+
+        {/* Bottom CTA */}
+        <Reveal delay={0.45}>
+          <div style={{ marginTop: 40 }}>
+            <a href={MAILTO} style={{
+              display: "inline-block", padding: "20px 56px",
+              background: RED, color: "#fff",
+              fontFamily: hd, fontWeight: 700, fontSize: 15,
+              letterSpacing: "0.1em", textTransform: "uppercase",
+              textDecoration: "none", transition: "background 0.25s, transform 0.2s",
+            }}
+            onMouseEnter={e => { e.target.style.background = "#e60000"; e.target.style.transform = "translateY(-2px)"; }}
+            onMouseLeave={e => { e.target.style.background = RED; e.target.style.transform = "translateY(0)"; }}
+            >Start Your Free 30-Day Trial</a>
           </div>
         </Reveal>
       </div>
@@ -641,28 +713,132 @@ function FinalCTA() {
   );
 }
 
+// ── Inline SVG icons for footer ──
+function FacebookIcon() {
+  return (
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <path d="M24 12c0-6.627-5.373-12-12-12S0 5.373 0 12c0 5.99 4.388 10.954 10.125 11.854V15.47H7.078V12h3.047V9.356c0-3.007 1.792-4.668 4.533-4.668 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.875V12h3.328l-.532 3.47h-2.796v8.385C19.612 22.954 24 17.99 24 12z"/>
+    </svg>
+  );
+}
+
+function EmailIcon() {
+  return (
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" xmlns="http://www.w3.org/2000/svg">
+      <rect x="2" y="4" width="20" height="16" rx="2"/>
+      <path d="M22 4l-10 8L2 4"/>
+    </svg>
+  );
+}
+
 // ── Footer ──
 function Footer() {
   return (
-    <footer style={{
-      padding: "44px 40px", background: "#fff",
-      borderTop: "1px solid rgba(0,0,0,0.05)",
-      display: "flex", alignItems: "center", justifyContent: "space-between",
-      flexWrap: "wrap", gap: 16,
-    }}>
-      <span style={{
-        fontFamily: hd, fontSize: 12, fontWeight: 700,
-        letterSpacing: "0.16em", color: "#ccc",
-      }}>PULPIT ENGINE</span>
-      <p style={{
-        fontFamily: bd, fontSize: 12, fontWeight: 400, color: "#ccc",
-      }}>High-performance content automation for the modern church.</p>
+    <footer style={{ background: "#fff", borderTop: "1px solid rgba(0,0,0,0.05)" }}>
+
+      {/* About Section */}
+      <div style={{
+        maxWidth: 700, margin: "0 auto",
+        padding: "72px 40px 48px",
+        textAlign: "center",
+      }}>
+        <p style={{
+          fontFamily: hd, fontSize: 11, fontWeight: 700,
+          letterSpacing: "0.22em", color: "#bbb", marginBottom: 24,
+        }}>THE STORY BEHIND THE ENGINE</p>
+        <h3 style={{
+          fontFamily: hd, fontSize: "clamp(20px, 3vw, 28px)",
+          fontWeight: 800, color: "#0a0a0a", lineHeight: 1.2,
+          marginBottom: 24,
+        }}>Built by a pastor's kid, for pastors.</h3>
+        <p style={{
+          fontFamily: bd, fontSize: 16, fontWeight: 400,
+          color: "#777", lineHeight: 1.85,
+        }}>
+          My name is Jake Gandara. My dad is the pastor of Sunnylane Southern Baptist Church 
+          in Del City, Oklahoma. I teach a Sunday school class and a Wednesday night theology class. 
+          I've grown up as a PK, a pastor's kid, and I've watched my dad labor weekend after weekend. 
+          Study. Prepare. Show up on Sunday morning and preach the Word. That is his calling, and I 
+          know his calling is not to be a social media marketer.
+        </p>
+        <p style={{
+          fontFamily: bd, fontSize: 16, fontWeight: 400,
+          color: "#777", lineHeight: 1.85, marginTop: 20,
+        }}>
+          I built Pulpit Engine to solve that. All he has to do is preach. Pulpit Engine takes 
+          his message and amplifies it throughout the week on social media, so his focus can stay 
+          exactly where it belongs: shepherding his flock and preaching the Word.
+        </p>
+        <p style={{
+          fontFamily: hd, fontSize: 14, fontWeight: 700,
+          color: "#0a0a0a", marginTop: 28,
+        }}>Jake Gandara</p>
+        <p style={{
+          fontFamily: bd, fontSize: 13, fontWeight: 400,
+          color: "#aaa", marginTop: 4,
+        }}>Founder, Pulpit Engine</p>
+      </div>
+
+      {/* Divider */}
+      <div style={{ height: 1, background: "rgba(0,0,0,0.05)", margin: "0 40px" }} />
+
+      {/* Bottom bar */}
+      <div style={{
+        padding: "32px 40px",
+        display: "flex", alignItems: "center", justifyContent: "space-between",
+        flexWrap: "wrap", gap: 16,
+      }}>
+        <span style={{
+          fontFamily: hd, fontSize: 12, fontWeight: 700,
+          letterSpacing: "0.16em", color: "#ccc",
+        }}>PULPIT ENGINE</span>
+
+        {/* Social links */}
+        <div style={{ display: "flex", alignItems: "center", gap: 20 }}>
+          <a
+            href="https://www.facebook.com/profile.php?id=61573305725816"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ color: "#999", transition: "color 0.2s", display: "flex" }}
+            onMouseEnter={e => e.currentTarget.style.color = "#0a0a0a"}
+            onMouseLeave={e => e.currentTarget.style.color = "#999"}
+            aria-label="Facebook"
+          >
+            <FacebookIcon />
+          </a>
+          <a
+            href={MAILTO}
+            style={{ color: "#999", transition: "color 0.2s", display: "flex" }}
+            onMouseEnter={e => e.currentTarget.style.color = "#0a0a0a"}
+            onMouseLeave={e => e.currentTarget.style.color = "#999"}
+            aria-label="Email"
+          >
+            <EmailIcon />
+          </a>
+        </div>
+
+        <p style={{
+          fontFamily: bd, fontSize: 12, fontWeight: 400, color: "#ccc",
+        }}>High-performance content automation for the modern church.</p>
+      </div>
     </footer>
   );
 }
 
 // ── App ──
 export default function PulpitEngine() {
+  // Change 2: Set page title and favicon
+  useEffect(() => {
+    document.title = "Pulpit Engine | Church Content Automation";
+    let link = document.querySelector("link[rel='icon']");
+    if (!link) {
+      link = document.createElement("link");
+      link.rel = "icon";
+      document.head.appendChild(link);
+    }
+    link.href = "/engine-icon.png";
+  }, []);
+
   return (
     <>
       <style>{`
