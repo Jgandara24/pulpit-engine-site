@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Win a Free Year of Pulpit Engine | SBC 2026 Giveaway</title>
+  <meta name="description" content="One SBC church wins a full year of automated sermon content. Enter below." />
+
+  <meta name="robots" content="noindex, nofollow" />
+
+  <meta property="og:title" content="Win a Free Year of Pulpit Engine" />
+  <meta property="og:description" content="SBC 2026 giveaway. One church wins a full year of automated sermon content." />
+  <meta property="og:type" content="website" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --red: #CC0100;
+      --black: #000000;
+      --white: #FFFFFF;
+      --gray-light: #F6F6F6;
+      --gray-mid: #E1E1E1;
+      --gray-text: #505050;
+      --max-width: 680px;
+      --wide-width: 840px;
+    }
+
+    html {
+      font-size: 16px;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      min-width: 320px;
+      font-family: 'Inter', sans-serif;
+      background-color: var(--white);
+      color: var(--black);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      overflow-x: hidden;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 18px;
+    }
+
+    header {
+      padding: 24px 0 0;
+    }
+
+    .brand-logo-frame {
+      width: 100%;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .brand-logo {
+      width: min(70vw, 330px);
+    }
+
+    .badge-wrap {
+      text-align: center;
+    }
+
+    .badge {
+      display: inline-block;
+      background-color: var(--white);
+      border: 1px solid var(--red);
+      color: var(--red);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0;
+      line-height: 1.25;
+      text-transform: uppercase;
+      padding: 8px 14px;
+      margin: 0 auto;
+    }
+
+    .hero {
+      padding: 0 0 8px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 38px;
+      font-weight: 900;
+      line-height: 1.02;
+      letter-spacing: 0;
+      color: var(--black);
+      margin: 16px auto 12px;
+      max-width: 620px;
+    }
+
+    .hero h1 span {
+      display: block;
+    }
+
+    .hero .subhead {
+      font-size: 17px;
+      font-weight: 400;
+      color: var(--gray-text);
+      line-height: 1.62;
+      max-width: 610px;
+      margin: 0 auto;
+    }
+
+    .hero .subhead strong {
+      color: var(--black);
+      font-weight: 800;
+    }
+
+    .form-section {
+      padding: 10px 0 18px;
+    }
+
+    .section-label {
+      font-size: 14px;
+      font-weight: 900;
+      letter-spacing: 0;
+      line-height: 1.3;
+      text-transform: none;
+      color: var(--red);
+      margin-bottom: 12px;
+      text-align: center;
+    }
+
+    .form-card {
+      border: 2px solid var(--red);
+      background: var(--gray-light);
+      padding: 26px 16px 18px;
+      box-shadow: 0 22px 70px rgba(0, 0, 0, 0.08);
+    }
+
+    .form-card h2 {
+      font-size: 28px;
+      font-weight: 900;
+      line-height: 1.08;
+      text-align: center;
+      margin-bottom: 10px;
+      color: var(--black);
+      letter-spacing: 0;
+    }
+
+    .form-sub {
+      max-width: 510px;
+      margin: 0 auto 24px;
+      font-size: 15px;
+      color: var(--gray-text);
+      text-align: center;
+      line-height: 1.55;
+    }
+
+    .tally-shell {
+      width: 100%;
+      border: 1px solid var(--black);
+      background: var(--white);
+      padding: 8px;
+    }
+
+    .tally-shell iframe,
+    iframe[data-tally-src] {
+      width: 100%;
+      min-height: 1120px;
+      border: 0;
+      display: block;
+      background: var(--white);
+    }
+
+    .rules-note {
+      margin-top: 14px;
+      font-size: 12px;
+      color: var(--gray-text);
+      line-height: 1.45;
+      text-align: center;
+    }
+
+    .what-you-win {
+      padding: 24px 0 46px;
+      border-top: 2px solid var(--red);
+      border-bottom: 2px solid var(--red);
+    }
+
+    .what-you-win .section-label,
+    .how-it-works .section-label {
+      font-size: 18px;
+    }
+
+    .what-you-win h2,
+    .how-it-works h2 {
+      font-size: 30px;
+      font-weight: 900;
+      line-height: 1.08;
+      text-align: center;
+      margin: 0 auto 34px;
+      color: var(--black);
+      letter-spacing: 0;
+    }
+
+    .how-it-works h2 {
+      max-width: 440px;
+    }
+
+    .how-it-works h2 span {
+      display: block;
+    }
+
+    .win-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 26px;
+    }
+
+    .win-list li {
+      display: grid;
+      grid-template-columns: 18px minmax(0, 1fr);
+      gap: 12px;
+      align-items: start;
+    }
+
+    .arrow {
+      color: var(--red);
+      font-size: 18px;
+      font-weight: 900;
+      line-height: 1.45;
+    }
+
+    .item-text {
+      min-width: 0;
+      font-size: 16px;
+      line-height: 1.62;
+      color: var(--black);
+    }
+
+    .item-text strong {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: 800;
+    }
+
+    .content-built {
+      padding: 28px 0;
+      background: var(--white);
+      border-bottom: 1px solid var(--gray-mid);
+    }
+
+    .content-built h2 {
+      max-width: 590px;
+      margin: 0 auto 18px;
+      font-size: 30px;
+      font-weight: 900;
+      line-height: 1.1;
+      text-align: center;
+      color: var(--black);
+      letter-spacing: 0;
+    }
+
+    .content-built h2 span {
+      display: block;
+    }
+
+    .content-built p {
+      max-width: 650px;
+      margin: 0 auto;
+      font-size: 16px;
+      line-height: 1.8;
+      color: var(--gray-text);
+      text-align: center;
+    }
+
+    .how-it-works {
+      padding: 22px 0 18px;
+    }
+
+    .steps {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .step {
+      display: grid;
+      grid-template-columns: 36px minmax(0, 1fr);
+      gap: 14px;
+      padding: 28px 0;
+      border-top: 1px solid var(--gray-mid);
+    }
+
+    .step:first-child {
+      border-top: 2px solid var(--red);
+    }
+
+    .step:last-child {
+      border-bottom: none;
+    }
+
+    .step-number {
+      font-size: 16px;
+      font-weight: 900;
+      color: var(--red);
+      letter-spacing: 0;
+      line-height: 1.35;
+    }
+
+    .step-content {
+      min-width: 0;
+    }
+
+    .step-content h3 {
+      font-size: 17px;
+      font-weight: 900;
+      line-height: 1.3;
+      margin-bottom: 6px;
+      color: var(--black);
+      letter-spacing: 0;
+    }
+
+    .step-content p {
+      font-size: 15px;
+      line-height: 1.72;
+      color: var(--gray-text);
+    }
+
+    .personal-note {
+      padding: 24px 0 24px;
+      background: var(--white);
+      border-top: 2px solid var(--red);
+      border-bottom: 2px solid var(--red);
+    }
+
+    .personal-note h2 {
+      max-width: 760px;
+      margin: 0 auto 22px;
+      font-size: 25px;
+      font-weight: 900;
+      line-height: 1.12;
+      color: var(--black);
+      text-align: center;
+      letter-spacing: 0;
+    }
+
+    .personal-note h2 span {
+      display: block;
+    }
+
+    .personal-note p {
+      max-width: 640px;
+      margin: 0 auto;
+      font-size: 17px;
+      color: var(--black);
+      line-height: 1.8;
+      font-style: normal;
+      font-weight: 500;
+      text-align: center;
+    }
+
+    footer {
+      background: var(--gray-light);
+      border-top: 1px solid var(--gray-mid);
+      padding: 24px 0 36px;
+    }
+
+    .footer-inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 14px;
+      text-align: center;
+    }
+
+    .footer-logo {
+      width: min(52vw, 170px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .footer-logo img {
+      width: 100%;
+      mix-blend-mode: multiply;
+    }
+
+    .footer-copy {
+      font-size: 12px;
+      color: var(--gray-text);
+      line-height: 1.55;
+      text-align: center;
+    }
+
+    @media (min-width: 560px) {
+      .container {
+        padding: 0 24px;
+      }
+
+      header {
+        padding-top: 28px;
+      }
+
+      .brand-logo {
+        width: min(56vw, 380px);
+      }
+
+      .badge {
+        font-size: 11px;
+        padding: 7px 16px;
+      }
+
+      .hero {
+        padding: 0 0 10px;
+      }
+
+      .hero h1 {
+        font-size: 56px;
+        margin-top: 16px;
+        margin-bottom: 14px;
+      }
+
+      .hero .subhead {
+        font-size: 19px;
+      }
+
+      .form-card {
+        padding: 36px 30px 24px;
+      }
+
+      .form-section {
+        padding: 12px 0 22px;
+      }
+
+      .what-you-win {
+        padding-top: 32px;
+        padding-bottom: 56px;
+      }
+
+      .content-built {
+        padding-top: 34px;
+        padding-bottom: 34px;
+      }
+
+      .how-it-works {
+        padding-top: 24px;
+        padding-bottom: 20px;
+      }
+
+      .what-you-win h2,
+      .how-it-works h2,
+      .content-built h2 {
+        font-size: 38px;
+      }
+
+      .content-built p {
+        font-size: 17px;
+      }
+
+      .personal-note {
+        padding: 28px 0 32px;
+      }
+
+      .personal-note h2 {
+        font-size: 34px;
+      }
+
+      .personal-note p {
+        font-size: 18px;
+      }
+    }
+
+    @media (max-width: 374px) {
+      .container {
+        padding: 0 14px;
+      }
+
+      .badge {
+        font-size: 9px;
+        padding: 6px 10px;
+      }
+
+      .hero h1 {
+        font-size: 30px;
+      }
+
+      .step {
+        grid-template-columns: 30px minmax(0, 1fr);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container">
+      <div class="brand-logo-frame" aria-label="Pulpit Engine">
+        <img class="brand-logo" src="../assets/pulpit-engine-logo-black-cropped.png" alt="Pulpit Engine" />
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="badge-wrap">
+          <span class="badge">SBC 2026 Giveaway</span>
+        </div>
+        <h1><span>A Full Year.</span><span>Fully Automated.</span></h1>
+        <p class="subhead">
+          Enter to win a free year of Pulpit Engine. Turn every sermon into a week of digital discipleship. No new staff. No extra software. Your pastor preaches. We handle the rest.
+        </p>
+      </div>
+    </section>
+
+    <section class="form-section">
+      <div class="container">
+        <div class="form-card">
+          <p class="section-label">Enter The Giveaway</p>
+          <h2>Claim Your Entry.</h2>
+          <p class="form-sub">
+            Fill out the form below. One church will be selected after SBC and contacted directly.
+          </p>
+
+          <div class="tally-shell">
+            <iframe
+              data-tally-src="https://tally.so/embed/J9o8K4?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
+              src="https://tally.so/embed/J9o8K4?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
+              loading="lazy"
+              title="SBC 2026 Giveaway entry form"
+            ></iframe>
+          </div>
+
+          <p class="rules-note">
+            One entry per church. No purchase required. Winner contacted after SBC.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="what-you-win">
+      <div class="container">
+        <p class="section-label">What The Winner Gets</p>
+        <h2>A Full Year.<br />Fully Automated.</h2>
+        <ul class="win-list">
+          <li>
+            <span class="arrow">&gt;</span>
+            <div class="item-text">
+              <strong>4 posts per day, 6 days a week</strong>
+              Morning highlight reel, evening highlight reel, text post in your pastor's voice, and sermon-point graphic or image.
+            </div>
+          </li>
+          <li>
+            <span class="arrow">&gt;</span>
+            <div class="item-text">
+              <strong>Content Built From The Actual Sermon</strong>
+              Every post is uniquely crafted from your pastor's specific points and message. Never a template. The message keeps preaching all week long.
+            </div>
+          </li>
+          <li>
+            <span class="arrow">&gt;</span>
+            <div class="item-text">
+              <strong>Automated Posting To Facebook With Zero Work From Your Team</strong>
+              Sunday sermon posts Monday through Wednesday. Wednesday sermon posts Thursday through Saturday. No logging in. No scheduling. No staff time.
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="content-built">
+      <div class="container">
+        <h2><span>Content Built</span><span>For Digital Discipleship.</span></h2>
+        <p>
+          Pulpit Engine does not use generic templates. It listens to your pastor's sermon and breaks it into clear, shareable points. Each point becomes its own mini-message across the week, with text, graphics, and captions all anchored to what was preached on Sunday. The result: your church keeps chewing on the same truth every day, instead of forgetting it by Monday afternoon.
+        </p>
+      </div>
+    </section>
+
+    <section class="how-it-works">
+      <div class="container">
+        <p class="section-label">How It Works</p>
+        <h2><span>Three Steps. Then It</span><span>Runs Itself.</span></h2>
+        <div class="steps">
+          <div class="step">
+            <span class="step-number">01</span>
+            <div class="step-content">
+              <h3>You Preach.</h3>
+              <p>Sunday or Wednesday, we pull your sermon from your live stream automatically. No new equipment. No extra setup.</p>
+            </div>
+          </div>
+          <div class="step">
+            <span class="step-number">02</span>
+            <div class="step-content">
+              <h3>We Build Your Week.</h3>
+              <p>We take your exact sermon points and turn them into a daily digital discipleship workflow. Monday is Point 1 with text and a simple graphic. Tuesday is Point 2. Wednesday is Point 3. Then we repeat or rotate those points for the rest of the week, so your people keep hearing your message in your voice all week long.</p>
+            </div>
+          </div>
+          <div class="step">
+            <span class="step-number">03</span>
+            <div class="step-content">
+              <h3>It Posts Automatically.</h3>
+              <p>Four posts go out every day on your church's Facebook page. Your congregation keeps seeing the sermon all week. Your team does nothing.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="personal-note">
+      <div class="container">
+        <h2><span>Built By A Pastor's Kid Who Knows</span><span>Pastors Are Called To Preach.</span></h2>
+        <p>
+          My dad is a pastor. I have watched him study, pray, preach, shepherd people, and then watch the sermon disappear from the church's online life by Monday. I built Pulpit Engine to solve that problem for him and for churches like his. Your pastor keeps preaching the Word. The system handles the social media work.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-logo" aria-label="Pulpit Engine">
+          <img src="../assets/pulpit-engine-logo-black-cropped.png" alt="Pulpit Engine" />
+        </div>
+        <p class="footer-copy">
+          &copy; 2026 Pulpit Engine | pulpitengine.com<br />
+          You Preach The Word. We'll Amplify The Message.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    var tallyScriptUrl = 'https://tally.so/widgets/embed.js';
+    function loadTallyEmbeds() {
+      if (typeof Tally !== 'undefined') {
+        Tally.loadEmbeds();
+      }
+    }
+    if (typeof Tally !== 'undefined') {
+      loadTallyEmbeds();
+    } else if (!document.querySelector('script[src="' + tallyScriptUrl + '"]')) {
+      var tallyScript = document.createElement('script');
+      tallyScript.src = tallyScriptUrl;
+      tallyScript.onload = loadTallyEmbeds;
+      tallyScript.onerror = loadTallyEmbeds;
+      document.body.appendChild(tallyScript);
+    }
+  </script>
+</body>
+</html>
