@@ -190,7 +190,7 @@ function Hero() {
     <section className="hero section-shell">
       <div className="section-inner hero-inner">
         <h1 className="reveal">
-          <span className="gradient-text">Turn Sunday sermons into daily Facebook posts. Automatically.</span>
+          Turn Sunday sermons into daily Facebook posts. <span className="accent-text">Automatically.</span>
         </h1>
         <p className="hero-sub reveal">
           Upload your sermon once. Pulpit Engine finds the best moments, creates captioned clips, and posts them to your church&apos;s Facebook page for you.
