@@ -1,14 +1,21 @@
 :root {
-  --black: #0a0a0a;
-  --black-soft: #171717;
-  --red: #cc0000;
-  --red-bright: #e60000;
-  --red-dark: #990000;
+  --primary: #0a0a0a;
+  --primary-soft: #171717;
+  --secondary: #fff;
+  --secondary-soft: #f7f7f7;
+  --accent: #cc0000;
+  --accent-bright: #e60000;
+  --accent-dark: #990000;
+  --black: var(--primary);
+  --black-soft: var(--primary-soft);
+  --red: var(--accent);
+  --red-bright: var(--accent-bright);
+  --red-dark: var(--accent-dark);
+  --white: var(--secondary);
   --mid: #555;
   --muted: #888;
   --border: #e5e5e5;
-  --band: #fafafa;
-  --white: #fff;
+  --band: var(--secondary-soft);
   --dark-lead: #cfcfcf;
   --dur-micro: 160ms;
   --dur-interact: 220ms;
@@ -31,8 +38,8 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
   font-size: 16px;
   line-height: 1.6;
-  color: var(--black);
-  background: var(--white);
+  color: var(--secondary);
+  background: var(--primary);
   overflow-x: hidden;
 }
 
@@ -88,15 +95,15 @@ body[data-motion="ready"] .card-grid .card.reveal {
   justify-content: flex-end;
   min-height: 60px;
   padding: 12px 40px;
-  background: rgba(255, 255, 255, 0.96);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  background: rgba(10, 10, 10, 0.96);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
   backdrop-filter: blur(18px);
 }
 
 .nav-logo {
   position: absolute;
   left: 50%;
-  color: var(--black);
+  color: var(--secondary);
   font-size: 13px;
   font-weight: 800;
   letter-spacing: 0.16em;
@@ -114,7 +121,7 @@ body[data-motion="ready"] .card-grid .card.reveal {
 
 .nav-links-right a,
 .mobile-drawer a {
-  color: var(--black);
+  color: var(--secondary);
   font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.08em;
@@ -153,20 +160,20 @@ body[data-motion="ready"] .card-grid .card.reveal {
 
 .nav-cta {
   padding: 8px 20px;
-  color: var(--white) !important;
+  color: var(--primary) !important;
   font-size: 12px;
   font-weight: 800;
   white-space: nowrap;
-  background: var(--black);
-  border: 1px solid var(--black);
+  background: var(--secondary);
+  border: 1px solid var(--secondary);
   border-radius: 2px;
 }
 
 .nav-cta:hover,
 .nav-cta:focus-visible {
-  color: var(--white) !important;
-  background: var(--red);
-  border-color: var(--red);
+  color: var(--secondary) !important;
+  background: var(--accent);
+  border-color: var(--accent);
 }
 
 .nav-mobile-toggle {
@@ -176,10 +183,10 @@ body[data-motion="ready"] .card-grid .card.reveal {
   width: 44px;
   height: 44px;
   padding: 0;
-  color: var(--black);
+  color: var(--secondary);
   cursor: pointer;
-  background: var(--white);
-  border: 1px solid rgba(0, 0, 0, 0.18);
+  background: var(--primary);
+  border: 1px solid rgba(255, 255, 255, 0.35);
   border-radius: 2px;
 }
 
@@ -208,7 +215,7 @@ body[data-motion="ready"] .card-grid .card.reveal {
   flex-direction: column;
   gap: 8px;
   padding: 16px;
-  background: var(--black);
+  background: var(--primary);
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 2px;
 }
@@ -218,7 +225,7 @@ body[data-motion="ready"] .card-grid .card.reveal {
   align-items: center;
   min-height: 44px;
   padding: 0 12px;
-  color: var(--white);
+  color: var(--secondary);
   border-radius: 2px;
 }
 
@@ -229,6 +236,7 @@ body[data-motion="ready"] .card-grid .card.reveal {
 }
 
 .mobile-drawer .nav-cta {
+  color: var(--secondary) !important;
   background: var(--red);
   border-color: var(--red);
 }
@@ -255,7 +263,7 @@ body[data-motion="ready"] .card-grid .card.reveal {
   min-height: calc(100vh - 60px);
   padding-top: 84px;
   padding-bottom: 84px;
-  background: var(--white);
+  background: var(--primary);
 }
 
 .hero-inner {
@@ -265,7 +273,7 @@ body[data-motion="ready"] .card-grid .card.reveal {
 .hero h1 {
   max-width: 860px;
   margin: 0 auto 22px;
-  color: var(--black);
+  color: var(--secondary);
   font-size: clamp(36px, 5vw, 56px);
   font-weight: 900;
   line-height: 1.08;
@@ -273,13 +281,13 @@ body[data-motion="ready"] .card-grid .card.reveal {
 }
 
 .accent-text {
-  color: var(--red);
+  color: var(--accent);
 }
 
 .hero-sub {
   max-width: 620px;
   margin: 0 auto;
-  color: var(--mid);
+  color: var(--dark-lead);
   font-size: 18px;
   line-height: 1.65;
 }
@@ -308,15 +316,15 @@ body[data-motion="ready"] .card-grid .card.reveal {
 }
 
 .btn-primary {
-  color: var(--white);
-  background: var(--red);
+  color: var(--secondary);
+  background: var(--accent);
   border: 0;
 }
 
 .btn-primary:hover,
 .btn-primary:focus-visible {
   text-decoration: none;
-  background: var(--red-bright);
+  background: var(--accent-bright);
   opacity: 1;
 }
 
@@ -332,15 +340,21 @@ body[data-motion="ready"] .card-grid .card.reveal {
 }
 
 .benefits-section {
-  background: var(--band);
+  color: var(--primary);
+  background: var(--secondary);
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
+}
+
+.how-section {
+  color: var(--secondary);
+  background: var(--primary);
 }
 
 .section-label {
   display: inline-block;
   margin-bottom: 12px;
-  color: var(--red);
+  color: var(--accent);
   font-size: 12px;
   font-weight: 700;
   line-height: 1.2;
@@ -387,13 +401,24 @@ body[data-motion="ready"] .card-grid .card.reveal {
 .cap-card {
   min-height: 100%;
   padding: 24px;
-  background: var(--white);
+  background: var(--secondary);
   border: 1px solid var(--border);
   border-radius: 2px;
 }
 
 .how-section .cap-card {
-  background: var(--band);
+  background: var(--primary-soft);
+  border-color: rgba(255, 255, 255, 0.14);
+}
+
+.how-section h2,
+.how-section .cap-title {
+  color: var(--secondary);
+}
+
+.how-section p.lead,
+.how-section .cap-body {
+  color: var(--dark-lead);
 }
 
 .cap-title {
@@ -437,8 +462,8 @@ body[data-motion="ready"] .card-grid .card.reveal {
 }
 
 .cta-dark {
-  color: var(--white);
-  background: var(--black);
+  color: var(--secondary);
+  background: var(--primary);
 }
 
 .cta-dark .section-label {
@@ -490,7 +515,7 @@ body[data-motion="ready"] .card-grid .card.reveal {
   color: rgba(255, 255, 255, 0.75);
   font-size: 13px;
   text-align: center;
-  background: var(--black);
+  background: var(--primary);
 }
 
 .site-footer p {
